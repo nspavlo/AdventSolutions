@@ -8,23 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		B7EC692B293939E8007B9EEE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC692A293939E8007B9EEE /* main.swift */; };
+		B7EC693529393B45007B9EEE /* Day01.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC693429393B45007B9EEE /* Day01.swift */; };
+		B7EC693929393DAF007B9EEE /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC693829393DAF007B9EEE /* Input.swift */; };
+		B7EC693C29393F61007B9EEE /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC693B29393F61007B9EEE /* Day.swift */; };
+		B7EC693E29393F97007B9EEE /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC693D29393F97007B9EEE /* Measure.swift */; };
+		B7EC6947293943BA007B9EEE /* Day01.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = B7EC694429394250007B9EEE /* Day01.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B7EC6925293939E8007B9EEE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				B7EC6947293943BA007B9EEE /* Day01.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B7EC6927293939E8007B9EEE /* AdventSolutions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventSolutions; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7EC692A293939E8007B9EEE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B7EC693429393B45007B9EEE /* Day01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day01.swift; sourceTree = "<group>"; };
+		B7EC693829393DAF007B9EEE /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		B7EC693B29393F61007B9EEE /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		B7EC693D29393F97007B9EEE /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		B7EC694429394250007B9EEE /* Day01.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day01.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +68,30 @@
 		B7EC6929293939E8007B9EEE /* AdventSolutions */ = {
 			isa = PBXGroup;
 			children = (
+				B7EC693F29393FBE007B9EEE /* Helpers */,
+				B7EC693229393B2D007B9EEE /* 2022 */,
 				B7EC692A293939E8007B9EEE /* main.swift */,
 			);
 			path = AdventSolutions;
+			sourceTree = "<group>";
+		};
+		B7EC693229393B2D007B9EEE /* 2022 */ = {
+			isa = PBXGroup;
+			children = (
+				B7EC694429394250007B9EEE /* Day01.txt */,
+				B7EC693429393B45007B9EEE /* Day01.swift */,
+			);
+			path = 2022;
+			sourceTree = "<group>";
+		};
+		B7EC693F29393FBE007B9EEE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B7EC693B29393F61007B9EEE /* Day.swift */,
+				B7EC693829393DAF007B9EEE /* Input.swift */,
+				B7EC693D29393F97007B9EEE /* Measure.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7EC693929393DAF007B9EEE /* Input.swift in Sources */,
+				B7EC693E29393F97007B9EEE /* Measure.swift in Sources */,
 				B7EC692B293939E8007B9EEE /* main.swift in Sources */,
+				B7EC693C29393F61007B9EEE /* Day.swift in Sources */,
+				B7EC693529393B45007B9EEE /* Day01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
