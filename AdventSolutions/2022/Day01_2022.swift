@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Day01: Day {
+struct Day01_2022: Day {
     let dayNumber = 1
-    let entries = Input.entriesFromTextFile(named: "Day01")
+    let entries = Input.entriesFromTextFile(named: "Day01_2022")
 
     func part1() -> Int {
         var currentMaxCalories = 0
