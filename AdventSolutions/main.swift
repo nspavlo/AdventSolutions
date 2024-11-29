@@ -9,7 +9,7 @@ let days: [Day] = [
     Day01(),
 ]
 
-days.forEach { day in
+for day in days {
     let dayString = "Day #\(day.dayNumber)"
     measure(name: "\(dayString), Part #1") { _ = day.part1() }
     measure(name: "\(dayString), Part #2") { _ = day.part2() }
