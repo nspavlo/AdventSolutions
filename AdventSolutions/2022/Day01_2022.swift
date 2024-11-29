@@ -1,5 +1,5 @@
 //
-//  Day01.swift
+//  Day01_2022.swift
 //  AdventSolutions
 //
 //  Created by Jans Pavlovs on 01/12/2022.
