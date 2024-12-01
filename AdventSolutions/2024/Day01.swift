@@ -39,6 +39,27 @@ struct Day01: Day {
     }
 
     func part2() -> Int {
-        return 2
+        let splits = entries.map { $0.components(separatedBy: "   ") }
+        
+        var stack1 = Array<Int>()
+        var stack2 = Array<Int>()
+        var stack3 = Array<Int>()
+        
+        splits.forEach { split in
+            if let first = split.first, let value = Int(first) {
+                stack1.append(value)
+            }
+            
+            if let last = split.last, let value = Int(last) {
+                stack2.append(value)
+            }
+        }
+        
+        for value1 in stack1 {
+            let matches = stack2.filter { $0 == value1 }
+            stack3.append(value1 * matches.count)
+        }
+        
+        return stack3.reduce(0, +)
     }
 }
