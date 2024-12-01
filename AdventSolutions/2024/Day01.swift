@@ -12,7 +12,30 @@ struct Day01: Day {
     let entries = Input.entriesFromTextFile(named: "Day01")
 
     func part1() -> Int {
-        return 1
+        let splits = entries.map { $0.components(separatedBy: "   ") }
+        
+        var stack1 = Array<Int>()
+        var stack2 = Array<Int>()
+        
+        splits.forEach { split in
+            if let first = split.first, let value = Int(first) {
+                stack1.append(value)
+            }
+            
+            if let last = split.last, let value = Int(last) {
+                stack2.append(value)
+            }
+        }
+        
+        let sorted1 = stack1.sorted();
+        let sorted2 = stack2.sorted();
+        
+        var sum = 0
+        for (value1, value2) in zip(sorted1, sorted2) {
+            sum += abs(value1 - value2)
+        }
+        
+        return sum
     }
 
     func part2() -> Int {
