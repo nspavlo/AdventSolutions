@@ -8,6 +8,7 @@
 let days: [Day] = [
     Day01(),
     Day02(),
+    Day03(),
 ]
 
 for day in days {
