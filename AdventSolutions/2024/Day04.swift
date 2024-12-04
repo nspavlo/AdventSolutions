@@ -73,6 +73,66 @@ struct Day04: Day {
     }
 
     func part2() -> Int {
-        return 2
+        let lookup: [Character] = ["M", "A", "S"]
+
+        var matrix: [[Character]] = []
+        var sum = 0
+
+        for entry in entries {
+            matrix.append(Array(entry))
+            print(Array(entry))
+        }
+
+        let rowLimit = matrix.count
+        let colLimit = matrix.first?.count ?? 0
+
+        func lookupInDirection(rowIndex: Int, colIndex: Int, direction: (Int, Int)) -> Bool {
+            var matches: [Character] = []
+
+            var currentRow = rowIndex
+            var currentCol = colIndex
+
+            for char in lookup {
+                guard currentRow >= 0, currentRow < rowLimit, currentCol >= 0, currentCol < colLimit else {
+                    return false
+                }
+
+                if matrix[currentRow][currentCol] == char {
+                    matches.append(char)
+                } else {
+                    return false
+                }
+
+                
+                currentRow += direction.0
+                currentCol += direction.1
+            }
+
+            return matches == lookup
+        }
+        
+        let directions = [
+            (1, 1),
+            (1, -1),
+            (-1, 1),
+            (-1, -1)
+        ]
+
+        for (rowIndex, row) in matrix.enumerated() {
+            for (colIndex, char) in row.enumerated() where char == lookup[1] {
+                let results = [
+                    lookupInDirection(rowIndex: rowIndex - 1, colIndex: colIndex - 1, direction: directions[0]),
+                    lookupInDirection(rowIndex: rowIndex - 1, colIndex: colIndex + 1, direction: directions[1]),
+                    lookupInDirection(rowIndex: rowIndex + 1, colIndex: colIndex - 1, direction: directions[2]),
+                    lookupInDirection(rowIndex: rowIndex + 1, colIndex: colIndex + 1, direction: directions[3]),
+                ]
+                
+                if results.filter({$0}).count == 2 {
+                    sum += 1
+                }
+            }
+        }
+        
+        return sum
     }
 }
