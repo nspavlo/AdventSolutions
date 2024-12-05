@@ -80,7 +80,6 @@ struct Day04: Day {
 
         for entry in entries {
             matrix.append(Array(entry))
-            print(Array(entry))
         }
 
         let rowLimit = matrix.count
