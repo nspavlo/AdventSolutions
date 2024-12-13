@@ -102,19 +102,18 @@ struct Day04: Day {
                     return false
                 }
 
-                
                 currentRow += direction.0
                 currentCol += direction.1
             }
 
             return matches == lookup
         }
-        
+
         let directions = [
             (1, 1),
             (1, -1),
             (-1, 1),
-            (-1, -1)
+            (-1, -1),
         ]
 
         for (rowIndex, row) in matrix.enumerated() {
@@ -125,13 +124,13 @@ struct Day04: Day {
                     lookupInDirection(rowIndex: rowIndex + 1, colIndex: colIndex - 1, direction: directions[2]),
                     lookupInDirection(rowIndex: rowIndex + 1, colIndex: colIndex + 1, direction: directions[3]),
                 ]
-                
-                if results.filter({$0}).count == 2 {
+
+                if results.filter({ $0 }).count == 2 {
                     sum += 1
                 }
             }
         }
-        
+
         return sum
     }
 }
