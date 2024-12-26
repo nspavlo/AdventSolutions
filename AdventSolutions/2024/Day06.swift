@@ -11,50 +11,6 @@ struct Day06: Day {
     let dayNumber = 6
     let entries = Input.entriesFromTextFile(named: "Day06")
 
-    enum Tile {
-        static let visited: Character = "X"
-        static let obstacle: Character = "#"
-        static let free: Character = "."
-    }
-
-    enum Direction: Character, CaseIterable {
-        case up = "^"
-        case right = ">"
-        case down = "v"
-        case left = "<"
-
-        var vector: (x: Int, y: Int) {
-            switch self {
-            case .up:
-                return (0, -1)
-            case .right:
-                return (1, 0)
-            case .down:
-                return (0, 1)
-            case .left:
-                return (-1, 0)
-            }
-        }
-
-        func turned() -> Direction {
-            switch self {
-            case .up:
-                return .right
-            case .right:
-                return .down
-            case .down:
-                return .left
-            case .left:
-                return .up
-            }
-        }
-    }
-
-    struct Position: Hashable {
-        let x: Int
-        let y: Int
-    }
-
     func part1() -> Int {
         var matrix = entries.map { Array($0) }
         var position = Position(x: 0, y: 0)
@@ -201,5 +157,49 @@ struct Day06: Day {
         }
 
         return count
+    }
+
+    private enum Tile {
+        static let visited: Character = "X"
+        static let obstacle: Character = "#"
+        static let free: Character = "."
+    }
+
+    private enum Direction: Character, CaseIterable {
+        case up = "^"
+        case right = ">"
+        case down = "v"
+        case left = "<"
+
+        var vector: (x: Int, y: Int) {
+            switch self {
+            case .up:
+                return (0, -1)
+            case .right:
+                return (1, 0)
+            case .down:
+                return (0, 1)
+            case .left:
+                return (-1, 0)
+            }
+        }
+
+        func turned() -> Direction {
+            switch self {
+            case .up:
+                return .right
+            case .right:
+                return .down
+            case .down:
+                return .left
+            case .left:
+                return .up
+            }
+        }
+    }
+
+    private struct Position: Hashable {
+        let x: Int
+        let y: Int
     }
 }

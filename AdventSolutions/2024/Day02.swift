@@ -11,8 +11,8 @@ struct Day02: Day {
     let dayNumber = 2
     let entries = Input.entriesFromTextFile(named: "Day02")
 
-    let increaseMin = 1
-    let increaseMax = 3
+    private let increaseMin = 1
+    private let increaseMax = 3
 
     func part1() -> Int {
         func isSequenceValid(_ numbers: [Int]) -> Bool {
