@@ -6,7 +6,7 @@
 //
 
 let days: [Day] = [
-    Day06(),
+    Day07(),
 ]
 
 for day in days {
